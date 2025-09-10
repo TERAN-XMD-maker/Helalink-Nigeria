@@ -1,1 +1,1292 @@
-index
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HELALINK • Official Launch 13 Sep 2025 (2PM EAT)</title>
+  <meta name="description" content="HELALINK – Online business platform. Launching 13 Sep 2025. Join now, get updates, and start earning through multiple methods." />
+
+  <!-- Tailwind (CDN) + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- PushEngage snippet (LEFT EXACTLY as you provided) -->
+  <script>
+  (function(w, d) {
+    w.PushEngage = w.PushEngage || [];
+    w._peq = w._peq || [];
+    PushEngage.push(['init', {
+        appId: 'e7c7c8aa-4546-4ab7-8057-800b54389a6b'
+    }]);
+
+    var e = d.createElement('script');
+    e.src = 'https://clientcdn.pushengage.com/sdks/pushengage-web-sdk.js';
+    e.async = true;
+    e.type = 'text/javascript';
+    d.head.appendChild(e);
+  })(window, document);
+  </script>
+
+  <style>
+    :root{--bg:#000;--fg:#e6eef8}
+    html,body{min-height:100%;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto;margin:0;padding:0}
+
+    /* Rainbow gradient helpers */
+    .rainbow{background:linear-gradient(90deg,#ff0066,#ffcc00,#33ff00,#00ccff,#7a00ff);background-size:600% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:slide 7s linear infinite}
+    @keyframes slide{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+
+    /* Layout */
+    .container{max-width:1100px;margin:0 auto;padding:28px 18px}
+    header{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.4));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+    h1,h2{font-family:'Space Grotesk',Inter,system-ui}
+
+    /* Hero / countdown */
+    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+    @media(max-width:960px){ .hero-grid{grid-template-columns:1fr} .rocket-viewport{order:2} }
+    .rocket-viewport{position:relative;height:420px;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 10px 40px rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center}
+    .hero-left{padding:8px}
+
+    .big-count { text-align:center; margin-top:18px; margin-bottom:8px }
+    .big-count .value { font-family: 'Space Grotesk', Inter, system-ui; font-weight:900; font-size:clamp(36px,8vw,72px); line-height:0.95; letter-spacing:-2px; background:linear-gradient(90deg,#ff0066,#ffcc00,#33ff00,#00ccff,#7a00ff); -webkit-background-clip:text; background-clip:text; color:transparent; animation:slide 6s linear infinite }
+    .big-count .sub { color:rgba(255,255,255,0.7); margin-top:6px; font-weight:700 }
+
+    .count-wrap-compact{display:flex;align-items:center;gap:18px;margin-top:18px}
+    .days-box{background:linear-gradient(90deg,#0f172a,#0b1220);border-radius:12px;padding:18px 22px;box-shadow:0 8px 30px rgba(8,10,20,0.6);min-width:120px;text-align:center}
+    .days-box .num{font-size:40px;font-weight:900;letter-spacing:-1px;color:#fff}
+    .hms-nums{display:flex;gap:8px;margin-left:6px}
+    .hms-nums .unit{background:rgba(255,255,255,0.03);padding:10px 12px;border-radius:10px;min-width:64px;text-align:center;font-weight:800;font-family:monospace}
+    .flip{animation:flipAnim .45s ease}
+    @keyframes flipAnim{0%{transform:translateY(-12px) rotateX(20deg);opacity:0}50%{transform:translateY(6px) rotateX(-8deg);opacity:1}100%{transform:translateY(0) rotateX(0);opacity:1}}
+
+    /* Emoji rocket */
+    .rocket-emoji{font-size:84px; transform:translateY(0); animation:rocketLift 4s ease-in-out infinite; filter:drop-shadow(0 18px 40px rgba(120,60,200,0.15));}
+    @keyframes rocketLift{0%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-12px) rotate(6deg)}100%{transform:translateY(0) rotate(-6deg)}}
+
+    /* Pads / ways of earning */
+    .earn-grid{display:grid;gap:14px;grid-template-columns:repeat(1,1fr)}
+    @media(min-width:720px){.earn-grid{grid-template-columns:repeat(3,1fr)}}
+    .pad{border-radius:12px;padding:18px;min-height:120px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;border:1px solid rgba(255,255,255,0.04);transition:transform .16s ease,box-shadow .16s ease}
+    .pad .title{font-weight:900}
+    .pad .desc{font-size:13px;color:rgba(255,255,255,0.78)}
+    .pad .meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .pad.selected{outline:3px solid rgba(255,255,255,0.06);transform:translateY(-6px);box-shadow:0 30px 60px rgba(0,0,0,0.6)}
+
+    /* Joiners */
+    .joiners-wrap{display:grid;grid-template-columns:1fr 320px;gap:14px}
+    @media(max-width:900px){.joiners-wrap{grid-template-columns:1fr}}
+    .joiner-card{display:flex;gap:12px;align-items:center;padding:8px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.015),transparent)}
+    .online-chip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.03);padding:6px;border-radius:8px}
+
+    /* Floating notify button (heartbeat + pulse) */
+    .notify-fixed{position:fixed;right:22px;bottom:22px;z-index:2200}
+    .notify-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;background:linear-gradient(90deg,#06121a,#07202a);border:1px solid rgba(255,255,255,0.06);cursor:pointer;color:white;font-weight:800;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+    .notify-icon{width:18px;height:18px;display:inline-block;transform-origin:center;animation:heartbeat 1200ms infinite}
+    @keyframes heartbeat{0%{transform:scale(1)}25%{transform:scale(1.18)}40%{transform:scale(1)}60%{transform:scale(1.08)}100%{transform:scale(1)}}
+    .pulse-ring{position:absolute;right:-6px;bottom:-6px;width:48px;height:48px;border-radius:999px;pointer-events:none;opacity:0.12;background:radial-gradient(circle at center,#7a00ff 0%, transparent 50%);animation:ringPulse 2000ms infinite}
+    @keyframes ringPulse{0%{transform:scale(0.9);opacity:0.12}50%{transform:scale(1.12);opacity:0.06}100%{transform:scale(0.9);opacity:0.12}}
+
+    /* WhatsApp floating */
+    .wa-fixed{position:fixed;left:22px;bottom:22px;z-index:2200}
+    .wa-btn{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:999px;background:linear-gradient(90deg,#25D366,#128C7E);color:#02120a;font-weight:800;box-shadow:0 14px 36px rgba(3,105,85,0.2)}
+
+    /* Modals */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.6);display:none;align-items:center;justify-content:center;z-index:2600}
+    .modal{background:linear-gradient(180deg,#041020,#071224);border-radius:12px;padding:20px;max-width:720px;width:94%;box-shadow:0 30px 60px rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.04);color:var(--fg)}
+    .modal h3{font-size:20px;margin:0 0 8px 0}
+    .modal p{margin:0 0 14px 0;color:rgba(255,255,255,0.78)}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:800}
+    .btn-cta{background:linear-gradient(90deg,#06b6d4,#7c3aed);color:#001219}
+    .btn-secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--fg)}
+
+    /* Toast */
+    .toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:#071224;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);display:none;color:var(--fg);z-index:2700}
+
+    @media(max-width:640px){ .rocket-viewport{height:300px} .days-box{min-width:100px} .hms-nums .unit{min-width:54px} .hero-grid{grid-template-columns:1fr} .wa-fixed{left:14px} .notify-fixed{right:14px} }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container flex items-center justify-between py-3">
+      <div class="text-sm text-slate-300">Official Launch <strong>13 Sep 2025, 2:00 PM EAT</strong></div>
+      <div class="text-xs text-slate-400">Secure your spot — join early</div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+    <section class="hero-grid">
+      <!-- Left: hero + countdown + CTA -->
+      <div class="hero-left">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+          <span class="rainbow">HELALINK</span>
+          <span class="block mt-2 caret" id="type"></span>
+        </h1>
+        <p class="mt-4 text-slate-300 max-w-prose">Next-gen business platform — multiple earning streams. Launching soon; enable notifications to get the best perks.</p>
+
+        <div class="mt-6 flex items-center gap-4">
+          <a href="#join" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-cyan-500/30 to-indigo-500/20 border border-cyan-400/20 text-cyan-200 font-semibold focus-ring">Join the Waitlist</a>
+
+          <!-- Notify button (also separate floating copy exists) -->
+          <div id="notifyBtnInline" class="notify-cta focus-ring" role="button" aria-pressed="false" aria-label="Press to enable notifications" style="display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:18px;border:1px solid rgba(255,255,255,0.06);background:linear-gradient(90deg,#071826,#04202a);color:#fff;font-weight:800;cursor:pointer">
+            <svg class="notify-heart" viewBox="0 0 24 24" width="18" height="18" fill="url(#gh)" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gh" x1="0" x2="1"><stop offset="0%" stop-color="#ff6b6b"/><stop offset="100%" stop-color="#ffcc66"/></linearGradient></defs><path d="M12 21s-7.5-4.35-9.25-6.1C-0.1 11.97 1 6.9 4.75 5.25 7 4 9.6 5 12 7.2 14.4 5 17 4 19.25 5.25 23 6.9 24.1 11.97 21.25 14.9 19.5 16.65 12 21 12 21z"></path></svg>
+            <span class="notify-label">Enable Notifications</span>
+          </div>
+
+          <a href="https://wa.me/2349116588616?text=Hi%20HELALINK%20team!%20I%20want%20to%20join%20the%20launch%20waitlist." target="_blank" class="px-4 py-3 rounded-2xl bg-amber-500/10 border border-amber-400/20 text-amber-300 font-semibold">Join via WhatsApp</a>
+        </div>
+
+        <!-- Big rainbow countdown -->
+        <div class="big-count mt-8" aria-live="polite">
+          <div id="bigCountdown" class="value">--d --:--:--</div>
+          <div class="sub">Official Launch — 13 Sep 2025 • 2:00 PM EAT</div>
+        </div>
+
+        <!-- Compact countdown -->
+        <div class="count-wrap-compact mt-4" aria-hidden="false">
+          <div class="days-box" aria-live="polite" aria-atomic="true">
+            <div class="num" id="daysNum">--</div>
+            <div style="font-size:12px;color:rgba(255,255,255,0.7);margin-top:6px">DAYS</div>
+          </div>
+
+          <div class="hms-nums">
+            <div class="unit" id="hUnit">--</div>
+            <div class="unit" id="mUnit">--</div>
+            <div class="unit" id="sUnit">--</div>
+          </div>
+        </div>
+
+        <div class="mt-6 glass rounded-2xl p-4" role="note" style="background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px">
+          <h4 class="font-semibold">Notification schedule</h4>
+          <p class="text-sm text-slate-300">We’ll send 24h before, 1h before, and at launch. Pick interests below to personalize messages.</p>
+        </div>
+      </div>
+
+      <!-- Right: rocket viewport -->
+      <div class="rocket-viewport glass p-6 relative" aria-hidden="true">
+        <div class="stars" aria-hidden="true">
+          <div class="layer a"></div>
+          <div class="layer b"></div>
+          <div class="layer c"></div>
+        </div>
+
+        <!-- emoji rocket -->
+        <div aria-hidden="true" style="z-index:20;pointer-events:none">
+          <div class="rocket-emoji">🚀</div>
+        </div>
+
+        <div class="absolute left-4 bottom-4 p-3 rounded-lg bg-white/3 text-sm font-semibold">Preparing for Liftoff • 13 Sep 2025 • 2:00 PM EAT</div>
+      </div>
+<!-- Fullscreen Image Carousel Section -->
+<section class="full-image-carousel">
+  <!-- Slides -->
+  <div class="slide active">
+    <img src="https://i.postimg.cc/VLZsKyVj/download.jpg" alt="HELALINK Preview 1" />
+  </div>
+  <div class="slide">
+    <img src="https://i.postimg.cc/YSWS4X8Q/download-1.jpg" alt="HELALINK Preview 2" />
+  </div>
+  <div class="slide">
+    <img src="https://i.postimg.cc/4xMdxCvJ/download-2.jpg" alt="HELALINK Preview 3" />
+  </div>
+  <div class="slide">
+    <img src="https://i.postimg.cc/Y23CmLND/images-3.jpg" alt="HELALINK Preview 4" />
+  </div>
+  <div class="slide">
+    <img src="https://i.postimg.cc/6qY6sF5x/images-4.jpg" alt="HELALINK Preview 5" />
+  </div>
+  <div class="slide">
+    <img src="https://i.postimg.cc/qqkB5prG/images-5.jpg" alt="HELALINK Preview 6" />
+  </div>
+  <div class="slide">
+    <img src="https://i.postimg.cc/d1Rt6Lb1/images-6.jpg" alt="HELALINK Preview 7" />
+  </div>
+  <div class="slide">
+    <img src="https://i.postimg.cc/YqCqN2br/images-7.jpg" alt="HELALINK Preview 8" />
+  </div>
+  <div class="slide">
+    <img src="https://i.postimg.cc/cHGLfQ52/images-8.jpg" alt="HELALINK Preview 9" />
+  </div>
+
+  <!-- Controls -->
+  <a class="prev">&#10094;</a>
+  <a class="next">&#10095;</a>
+
+  <!-- Navigation Dots -->
+  <div class="dots"></div>
+</section>
+
+<!-- Buttons Below Carousel -->
+<div class="carousel-buttons">
+  <a href="#earnings" class="btn-primary">Explore Earnings</a>
+  <a href="https://wa.me/2349116588616" target="_blank" class="btn-secondary">Chat on WhatsApp</a>
+</div>
+
+<style>
+/* Carousel container */
+.full-image-carousel {
+  position: relative;
+  width: 100%;
+  height: 500px; /* banner height */
+  overflow: hidden;
+  background: #000; /* background behind images */
+}
+
+.full-image-carousel .slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.full-image-carousel .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.full-image-carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* show full image without cropping */
+  background: #000;    /* fill gaps with black */
+}
+
+/* Controls */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.3s;
+  user-select: none;
+  z-index: 2;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.prev:hover, .next:hover { color: #ff416c; }
+
+/* Navigation dots */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.dots span {
+  height: 12px;
+  width: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dots span.active {
+  background: #ff416c;
+  transform: scale(1.2);
+}
+
+/* Buttons below carousel */
+.carousel-buttons {
+  text-align: center;
+  margin: 20px 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-primary:hover { opacity: 0.85; }
+
+.btn-secondary {
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+}
+
+.btn-secondary:hover { background: #f1f1f1; }
+</style>
+
+<script>
+// Carousel Logic
+let currentSlide = 0;
+const slides = document.querySelectorAll(".full-image-carousel .slide");
+const dotsContainer = document.querySelector(".dots");
+const totalSlides = slides.length;
+const intervalTime = 5000; // auto-slide every 5s
+let slideInterval;
+
+// Create dots dynamically
+slides.forEach((_, index) => {
+  const dot = document.createElement("span");
+  if (index === 0) dot.classList.add("active");
+  dot.addEventListener("click", () => {
+    currentSlide = index;
+    showSlide(currentSlide);
+    resetInterval();
+  });
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".dots span");
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove("active");
+    if (i === index) slide.classList.add("active");
+  });
+  dots.forEach((dot, i) => {
+    dot.classList.remove("active");
+    if (i === index) dot.classList.add("active");
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  showSlide(currentSlide);
+}
+
+function startCarousel() {
+  slideInterval = setInterval(nextSlide, intervalTime);
+}
+
+function resetInterval() {
+  clearInterval(slideInterval);
+  startCarousel();
+}
+
+// Controls
+document.querySelector(".next").addEventListener("click", () => {
+  nextSlide();
+  resetInterval();
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+  prevSlide();
+  resetInterval();
+});
+
+// Init
+showSlide(currentSlide);
+startCarousel();
+</script>
+
+
+    <!-- Ways of earning -->
+    <section id="earn" class="mt-10">
+      <h2 class="text-2xl font-bold mb-1">♦️HELALINK AGENCIES dropping soon♦️ 🔜</h2>
+      <div class="text-sm text-slate-300 mb-2">💎From <strong>BEST TECH MANAGEMENT</strong></div>
+      <div class="text-lg font-semibold text-amber-300 mb-4">You can't afford to miss — It's time to set up NEW RECORDS IN NETWORKING 🎊 🎉</div>
+
+      <div class="earn-grid" id="earnGrid">
+        <!-- 1 -->
+        <article class="pad" data-key="affiliate" data-title="Multi-level Affiliate program" data-desc="Refer users and agencies and earn multi-tier commissions from your direct and network activity." style="background:linear-gradient(180deg,#e6fffa,#bbf7d0);color:#042014">
+          <div>
+            <div class="title">1. Multi-level Affiliate program</div>
+            <div class="desc">Refer users & agencies and earn multi-tier commissions.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=Hi%20HELALINK%20team!%20I%20want%20to%20join%20the%20affiliate%20program" target="_blank">Join via WhatsApp</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="pad" data-key="videos" data-title="Watch Sponsored Videos" data-desc="Watch short sponsored YouTube and TikTok videos, validate views and receive credits that convert to cash or features." style="background:linear-gradient(180deg,#fff7ed,#ffedd5);color:#5a2b00">
+          <div>
+            <div class="title">2. Watch Sponsored Videos</div>
+            <div class="desc">Watch short clips and earn credits redeemable for cash or features.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=I%20want%20to%20earn%20by%20watching%20videos" target="_blank">Start Earning</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="pad" data-key="roulette" data-title="Roulette / Casino Spin" data-desc="Use earned credits to spin and win prizes, multipliers and bonuses. Play responsibly." style="background:linear-gradient(180deg,#fff0f6,#ffe4ef);color:#3e0b1e">
+          <div>
+            <div class="title">3. Roulette / Casino Spin</div>
+            <div class="desc">Spin wheels for prizes, multipliers and bonuses.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=I%20want%20to%20try%20the%20roulette" target="_blank">Play via WhatsApp</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="pad" data-key="games" data-title="Online Games (Chess & Draughts)" data-desc="Play chess and draughts, complete quests, climb leaderboards and win seasonal rewards and badges." style="background:linear-gradient(180deg,#f3e8ff,#efe6ff);color:#2a0f2f">
+          <div>
+            <div class="title">4. Online Games (Chess & Draughts)</div>
+            <div class="desc">Daily matches, ranked play and rewards.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=I%20want%20to%20play%20games" target="_blank">Try Games</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="pad" data-key="ads" data-title="Advertisement clicks" data-desc="Place ads on your profile or content pages and earn a share of revenue per view/click." style="background:linear-gradient(180deg,#eff6ff,#dbeafe);color:#05204a">
+          <div>
+            <div class="title">5. Advertisement clicks</div>
+            <div class="desc">Host ads and earn revenue per view or click.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=I%20want%20to%20monetize%20ads" target="_blank">Monetize</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="pad" data-key="trading" data-title="Forex Trading" data-desc="Receive signals, copy strategies and earn from successful trades — includes educational material and risk tools." style="background:linear-gradient(180deg,#ecfeff,#cffafe);color:#03363f">
+          <div>
+            <div class="title">6. Forex Trading</div>
+            <div class="desc">Signals, copy strategies and educational content.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=I%20want%20trading%20signals" target="_blank">Get Signals</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="pad" data-key="ai" data-title="Artificial Intelligence" data-desc="Offer AI chatbots, content generation and tools to clients; charge per use or subscription." style="background:linear-gradient(180deg,#f5f3ff,#efe9ff);color:#24102f">
+          <div>
+            <div class="title">7. Artificial Intelligence</div>
+            <div class="desc">Sell AI tools, chatbots and automation to clients.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=I%20offer%20AI%20services" target="_blank">List Service</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="pad" data-key="marketplace" data-title="Digital Art & Virtual Real Estate" data-desc="Create NFT drops, sell digital art and virtual parcels; earn royalties and trade assets." style="background:linear-gradient(180deg,#fffbe6,#fff4cc);color:#4a3503">
+          <div>
+            <div class="title">8. Digital Art & Virtual Real Estate</div>
+            <div class="desc">NFT drops, royalties and virtual property sales.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=I%20want%20to%20launch%20an%20NFT" target="_blank">Launch Drop</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+
+        <!-- 9 -->
+        <article class="pad" data-key="content" data-title="Blogging / Articles Writing" data-desc="Publish guides, articles and posts — earn from ad share, tips and subscriptions." style="background:linear-gradient(180deg,#ecfeff,#dbeafe);color:#00303a">
+          <div>
+            <div class="title">9. Blogging / Articles Writing</div>
+            <div class="desc">Write and publish content to earn ad share and tips.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=I%20want%20to%20publish%20content" target="_blank">Publish</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="pad" data-key="gifts" data-title="Surprise Gifts & Offers" data-desc="Exchange credits for mobile money vouchers, gift cards and limited-time launch offers." style="background:linear-gradient(180deg,#fff0f6,#ffecf8);color:#3e0830">
+          <div>
+            <div class="title">10. Surprise Gifts & Offers</div>
+            <div class="desc">Redeem credits for vouchers, discounts and launch rewards.</div>
+          </div>
+          <div class="meta">
+            <a class="btn" href="https://wa.me/2349116588616?text=I%20want%20gift%20cards" target="_blank">Redeem</a>
+            <button class="btn modal-open">Details</button>
+          </div>
+        </article>
+      </div>
+
+      <p class="text-xs text-slate-400 mt-3">Tap cards to pick interests (multi-select). Selections are saved locally; enable notifications to receive personalized alerts about chosen ways of earning.</p>
+    </section>
+
+    <!-- Joiners & online -->
+    <section id="join" class="mt-10">
+      <h2 class="text-2xl font-bold mb-3">Real-time Joiners & Online</h2>
+
+      <div class="joiners-wrap">
+        <div class="rounded-lg p-4" style="background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)">
+          <div id="professionalFeed" class="grid gap-3"></div>
+        </div>
+
+        <aside class="rounded-lg p-4" style="background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><div class="font-bold">Members online</div><div id="onlineCount" class="font-bold">0</div></div>
+          <div id="onlineList" class="flex gap-3 flex-wrap"></div>
+        </aside>
+      </div>
+    </section>
+<!-- ===== HELALINK SANDBOX (paste this where you want the section) ===== -->
+<div id="helalink-iframe-root"></div>
+
+<script>
+(function(){
+  const root = document.getElementById('helalink-iframe-root');
+  if (!root) return;
+
+  // remove prior iframe if present
+  const existing = root.querySelector('iframe');
+  if (existing) existing.remove();
+
+  // create iframe
+  const iframe = document.createElement('iframe');
+  iframe.setAttribute('title','Helalink sandbox');
+  iframe.setAttribute('aria-label','Helalink sandbox');
+  iframe.style.width = '100%';
+  iframe.style.border = '0';
+  iframe.style.minHeight = '480px';
+  iframe.loading = 'lazy';
+  root.appendChild(iframe);
+
+  // Unique channel id for postMessage validation (in case multiple widgets exist)
+  const CHANNEL = 'helalink_sandbox_v1';
+
+  // The full iframe HTML as a string
+  const iframeHtml = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Helalink Sandbox</title>
+<style>
+  :root{--accent-a:#7c3aed;--accent-b:#06b6d4;--bg:#020617;--fg:#e8eef8}
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+  .container{max-width:980px;margin:0 auto;padding:20px;box-sizing:border-box}
+  h2{margin:6px 0 12px;font-size:1.15rem;color:#eaf3ff;font-weight:800}
+
+  /* Accordion */
+  .hl-what{background:linear-gradient(180deg,#071028,#071425);padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .hl-acc-item{background:rgba(255,255,255,0.02);border-radius:10px;margin-bottom:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
+  .hl-acc-btn{width:100%;text-align:left;padding:12px;border:0;background:transparent;color:#dfefff;font-weight:700;cursor:pointer;font-size:0.98rem}
+  .hl-acc-panel{max-height:0;overflow:hidden;padding:0 12px;color:#9fb0d1;transition:max-height .28s ease}
+  .hl-acc-item.active .hl-acc-panel{padding:10px 12px}
+
+  .hl-wh-btn{display:inline-block;padding:8px 12px;border-radius:8px;background:linear-gradient(90deg,var(--accent-b),var(--accent-a));color:#fff;text-decoration:none;font-weight:700;margin-top:8px}
+
+  /* Trust grid */
+  .hl-trust{margin:12px 0}
+  .hl-trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+  .hl-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);color:var(--fg)}
+  .hl-trust-note{margin-top:10px;padding:10px;border-radius:8px;background:rgba(255,255,255,0.01);color:#9fb0d1}
+
+  /* Testimonials slider */
+  .hl-testimonials{margin:12px 0;border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg,#020617,#071232)}
+  .hl-test-wrap{position:relative;display:flex;align-items:center;gap:8px}
+  .hl-test-viewport{width:100%;overflow:hidden;border-radius:10px}
+  .hl-test-slider{display:flex;transition:transform .48s cubic-bezier(.2,.9,.3,1);will-change:transform}
+  .hl-test-slide{box-sizing:border-box;padding:8px;min-height:120px}
+  .hl-test-card{background:linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.06));padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);color:#eef6ff;box-shadow:0 8px 30px rgba(2,6,23,0.35)}
+  .hl-test-card p{margin:0;font-size:0.98rem;line-height:1.45;color:#f1f8ff}
+  .hl-meta{display:flex;align-items:center;gap:10px;margin-top:10px}
+  .hl-meta img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.07);box-shadow:0 8px 24px rgba(0,0,0,0.45)}
+  .hl-meta strong{display:block;color:#fff}
+  .hl-meta span{display:block;font-size:0.92rem;color:#c7d2fe}
+
+  .hl-test-nav{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#fff;border:0;padding:8px 10px;border-radius:8px;cursor:pointer;box-shadow:0 10px 30px rgba(6,182,212,0.06)}
+  .hl-prev{position:absolute;left:8px;top:50%;transform:translateY(-50%);z-index:10}
+  .hl-next{position:absolute;right:8px;top:50%;transform:translateY(-50%);z-index:10}
+
+  .hl-test-dots{display:flex;gap:8px;justify-content:center;margin-top:12px}
+  .hl-test-dots button{width:10px;height:10px;border-radius:50%;border:0;background:rgba(255,255,255,0.06);cursor:pointer}
+  .hl-test-dots button.active{background:linear-gradient(90deg,var(--accent-b),var(--accent-a))}
+
+  .hl-verification{margin-top:12px;padding:12px;border-radius:10px;background:rgba(255,255,255,0.01);color:#9fb0d1}
+
+  .hl-share{margin:12px 0;padding:12px;border-radius:10px;background:linear-gradient(180deg,#071232,#061226);border:1px solid rgba(255,255,255,0.03)}
+  .hl-test-form textarea,.hl-test-form input{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:rgba(255,255,255,0.02);color:var(--fg);box-sizing:border-box}
+  .hl-form-row{display:flex;gap:8px;margin-top:8px}
+  .hl-form-row input{flex:1}
+  .hl-form-row button{padding:10px 14px;background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#fff;border:0;border-radius:8px;cursor:pointer;font-weight:800}
+  .hl-small{font-size:0.85rem;color:#9fb0d1;margin-top:8px}
+
+  @media (max-width:599px){ .hl-test-slide{width:100%;flex:0 0 100%} }
+  @media (min-width:600px) and (max-width:899px){ .hl-test-slide{width:50%;flex:0 0 50%} }
+  @media (min-width:900px){ .hl-test-slide{width:33.3333%;flex:0 0 33.3333%} }
+  @media (max-width:420px) {.hl-meta img{width:48px;height:48px} h2{font-size:1rem}}
+</style>
+</head>
+<body>
+  <div class="container">
+    <!-- WHAT TO DO -->
+    <section class="hl-what" aria-labelledby="what-title">
+      <h2 id="what-title">🚀 What To Do Now</h2>
+      <div class="hl-acc-item">
+        <button class="hl-acc-btn" aria-expanded="true">🔔 Step 1: Enable Notifications</button>
+        <div class="hl-acc-panel">Turn on push notifications so you get launch reminders and urgent updates.</div>
+      </div>
+      <div class="hl-acc-item">
+        <button class="hl-acc-btn" aria-expanded="false">💬 Step 2: Join WhatsApp</button>
+        <div class="hl-acc-panel">Join WhatsApp for live guidance. <div style="margin-top:8px"><a class="hl-wh-btn" href="https://wa.me/2349116588616" target="_blank" rel="noopener">WhatsApp: +2349116588616</a></div></div>
+      </div>
+      <div class="hl-acc-item"><button class="hl-acc-btn" aria-expanded="false">🧑‍💻 Step 3: Preview Earning Methods</button><div class="hl-acc-panel">Preview affiliate/referral/community campaign workflows so you're ready on launch day.</div></div>
+      <div class="hl-acc-item"><button class="hl-acc-btn" aria-expanded="false">👥 Step 4: Invite Your Team</button><div class="hl-acc-panel">Share your invite link and build a launch-day squad — teamwork multiplies reach.</div></div>
+      <div class="hl-acc-item"><button class="hl-acc-btn" aria-expanded="false">🧾 Step 5: Prepare Profile & ID</button><div class="hl-acc-panel">Have a profile name, country and optional ID ready — speeds up verification after launch.</div></div>
+      <div class="hl-acc-item"><button class="hl-acc-btn" aria-expanded="false">📅 Step 6: Mark Launch Day</button><div class="hl-acc-panel"><strong>13th September 🎉</strong> — live Q&amp;A and launch-day perks.</div></div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="hl-trust" aria-labelledby="trust-title">
+      <h2 id="trust-title">💎 Why Trust Us?</h2>
+      <div class="hl-trust-grid">
+        <div class="hl-card"><h4>🔐 Security-first</h4><p>Modern security practices and transparent support channels.</p></div>
+        <div class="hl-card"><h4>🧾 Clear Info</h4><p>Comprehensive guides and launch checklists inside WhatsApp.</p></div>
+        <div class="hl-card"><h4>🛡️ Verified Leads</h4><p>Local leads screened; verification via WhatsApp before public posting.</p></div>
+        <div class="hl-card"><h4>📲 Live Support</h4><p>Real people on WhatsApp to walk you through pre-launch steps.</p></div>
+      </div>
+      <div class="hl-trust-note"><strong>Can't consult locally? Try:</strong><ol><li>Request a short WhatsApp video/voice note as proof.</li><li>Ask for prep screenshots or invite messages (no payments before launch).</li><li>Use WhatsApp support to verify leads before engaging.</li></ol></div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="hl-testimonials" aria-labelledby="test-title">
+      <h2 id="test-title">💬 Voices — Africa is ready (Launch: 13th Sept 🎉)</h2>
+      <div class="hl-test-wrap" id="sliderWrap">
+        <button class="hl-test-nav hl-prev" aria-label="Previous">◀</button>
+        <div class="hl-test-viewport"><div class="hl-test-slider" id="testSlider" aria-live="polite" role="list"></div></div>
+        <button class="hl-test-nav hl-next" aria-label="Next">▶</button>
+      </div>
+      <div class="hl-test-dots" id="testDots" role="tablist" aria-label="Testimonial pages"></div>
+      <div class="hl-verification"><h3>Verification & trust</h3><p>We contact submitters on WhatsApp (+2349116588616) to confirm details before any public post. No transactions required pre-launch.</p></div>
+    </section>
+
+    <!-- SHARE -->
+    <section class="hl-share" aria-labelledby="share-title">
+      <h2 id="share-title">🌟 Share Your Launch Intent (optional)</h2>
+      <form class="hl-test-form" aria-label="Submit testimonial" id="testForm">
+        <textarea name="message" rows="4" placeholder="Short note about launch prep & WhatsApp guidance (optional)"></textarea>
+        <div class="hl-form-row">
+          <input name="name" type="text" placeholder="Name (optional)">
+          <input name="country" type="text" placeholder="Country (optional)">
+          <button type="submit">Send</button>
+        </div>
+        <p class="hl-small">We’ll contact you on WhatsApp (+2349116588616) to verify before publishing.</p>
+      </form>
+    </section>
+  </div>
+
+<script>
+/* widget script inside iframe -- builds testimonials, slider, accordion, form */
+(function(){
+  // 30 unique testimonials
+  var testimonials = [
+    {name:'Aaliyah',country:'Kenya',flag:'🇰🇪',avatar:'https://i.pravatar.cc/80?img=12',message:'Absolutely ready — our Nairobi team is hyped for 13th Sept. WhatsApp onboarding was quick and clear.'},
+    {name:'David',country:'Nigeria',flag:'🇳🇬',avatar:'https://i.pravatar.cc/80?img=56',message:'Joined the WhatsApp group, did the checklist — excited for launch day and the affiliate tools.'},
+    {name:'Ruth',country:'Ghana',flag:'🇬🇭',avatar:'https://i.pravatar.cc/80?img=33',message:'This platform looks promising — the community guidance prepared us well. Counting down to the launch!'},
+    {name:'Sam',country:'Uganda',flag:'🇺🇬',avatar:'https://i.pravatar.cc/80?img=4',message:'Saved the date. I like the surprise gifts idea and the clear verification steps on WhatsApp.'},
+    {name:'Lilian',country:'Tanzania',flag:'🇹🇿',avatar:'https://i.pravatar.cc/80?img=78',message:'My group in Dar is ready — we tested the onboarding flow and it works smoothly.'},
+    {name:'Ngozi',country:'Nigeria',flag:'🇳🇬',avatar:'https://i.pravatar.cc/80?img=22',message:'Very impressed with the pre-launch support. Looking forward to listing AI services on day one.'},
+    {name:'Chike',country:'Kenya',flag:'🇰🇪',avatar:'https://i.pravatar.cc/80?img=67',message:'Helalink looks like a great place to scale small teams. WhatsApp mentors helped us prototype a campaign.'},
+    {name:'Fatima',country:'South Africa',flag:'🇿🇦',avatar:'https://i.pravatar.cc/80?img=90',message:'Testing the video earnings flow now — the UX is friendly and payouts seem straightforward.'},
+    {name:'Ibrahim',country:'Zambia',flag:'🇿🇲',avatar:'https://i.pravatar.cc/80?img=15',message:'Excited for the marketplace features. We\\'ve prepared digital art drops for the launch.'},
+    {name:'Chinwe',country:'Nigeria',flag:'🇳🇬',avatar:'https://i.pravatar.cc/80?img=19',message:'Verified leads and WhatsApp support gave us confidence. We\\'re recruiting our launch team now.'},
+    {name:'Kwame',country:'Ghana',flag:'🇬🇭',avatar:'https://i.pravatar.cc/80?img=39',message:'I love the idea of multiple earning streams — affiliate + content + games is a nice combo.'},
+    {name:'Yaa',country:'Ghana',flag:'🇬🇭',avatar:'https://i.pravatar.cc/80?img=45',message:'Prepared FAQs and profiles for our community — the WhatsApp crew was very responsive.'},
+    {name:'Kojo',country:'Ghana',flag:'🇬🇭',avatar:'https://i.pravatar.cc/80?img=46',message:'Looking forward to trading signals — the educational material is already helpful.'},
+    {name:'Esi',country:'Ghana',flag:'🇬🇭',avatar:'https://i.pravatar.cc/80?img=47',message:'We tested leaderboards in the games section — great engagement potential for small communities.'},
+    {name:'Yaw',country:'Ghana',flag:'🇬🇭',avatar:'https://i.pravatar.cc/80?img=48',message:'Counting down! The team\\'s clarity on verification makes this feel trustworthy.'},
+    {name:'James',country:'Kenya',flag:'🇰🇪',avatar:'https://i.pravatar.cc/80?img=52',message:'I\\'ll be bringing my content crew on launch — ad revenue sharing looks promising.'},
+    {name:'Grace',country:'Uganda',flag:'🇺🇬',avatar:'https://i.pravatar.cc/80?img=59',message:'WhatsApp support helped me set up profile & ID quickly — verified and ready.'},
+    {name:'Paul',country:'Malawi',flag:'🇲🇼',avatar:'https://i.pravatar.cc/80?img=70',message:'I\\'m curious about the roulette bonuses — looks fun for community events with responsible play.'},
+    {name:'Rita',country:'Zimbabwe',flag:'🇿🇼',avatar:'https://i.pravatar.cc/80?img=71',message:'Prepping digital art and drops — excited to try royalties on the marketplace.'},
+    {name:'Moses',country:'Kenya',flag:'🇰🇪',avatar:'https://i.pravatar.cc/80?img=72',message:'We hosted a mini meetup to train our launch volunteers — the guides were great.'},
+    {name:'Anita',country:'Botswana',flag:'🇧🇼',avatar:'https://i.pravatar.cc/80?img=73',message:'The onboarding flow is clear and fast. The verification note gave us peace of mind.'},
+    {name:'Issa',country:'Tanzania',flag:'🇹🇿',avatar:'https://i.pravatar.cc/80?img=74',message:'Looking forward to the multi-level affiliate program. Our team is learning the referral flow.'},
+    {name:'Neema',country:'Malawi',flag:'🇲🇼',avatar:'https://i.pravatar.cc/80?img=75',message:'I like the surprise gifts — good incentive for early adopters.'},
+    {name:'Hamisi',country:'Tanzania',flag:'🇹🇿',avatar:'https://i.pravatar.cc/80?img=76',message:'We\\'ve scheduled launch-day tasks and are confident now — WhatsApp support is active.'},
+    {name:'Fatma',country:'Kenya',flag:'🇰🇪',avatar:'https://i.pravatar.cc/80?img=77',message:'Great to see accessible help and verification steps. Our local team will attend the live Q&A.'},
+    {name:'Thabo',country:'South Africa',flag:'🇿🇦',avatar:'https://i.pravatar.cc/80?img=84',message:'Helalink may be a good new revenue stream for creators — excited to test it.'},
+    {name:'Lerato',country:'South Africa',flag:'🇿🇦',avatar:'https://i.pravatar.cc/80?img=85',message:'I\\'m lining up an NFT drop for launch day. The support team answered our questions quickly.'},
+    {name:'Sipho',country:'South Africa',flag:'🇿🇦',avatar:'https://i.pravatar.cc/80?img=86',message:'We created sample content and tested video credits — it\\'s easy to use.'},
+    {name:'Naledi',country:'South Africa',flag:'🇿🇦',avatar:'https://i.pravatar.cc/80?img=87',message:'Already told my circle — the team is friendly and the plans are clear.'}
+  ];
+
+  // escape helper (basic)
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  // Build slider DOM
+  var slider = document.getElementById('testSlider');
+  testimonials.forEach(function(t){
+    var art = document.createElement('article');
+    art.className = 'hl-test-slide';
+    art.setAttribute('data-country', t.country);
+    art.setAttribute('role','listitem');
+    art.innerHTML = '<div class="hl-test-card"><p>' + esc(t.message) + '</p>' +
+      '<div class="hl-meta"><img loading="lazy" src="' + t.avatar + '" alt="' + esc(t.name) + '">' +
+      '<div><strong>' + esc(t.name) + '</strong><span>' + esc(t.country) + ' ' + t.flag + '</span></div></div></div>';
+    slider.appendChild(art);
+  });
+
+  // Accordion wiring
+  var acc = document.querySelectorAll('.hl-acc-item');
+  acc.forEach(function(it){
+    var btn = it.querySelector('.hl-acc-btn');
+    var panel = it.querySelector('.hl-acc-panel');
+    panel.style.maxHeight = btn.getAttribute('aria-expanded') === 'true' ? panel.scrollHeight + 'px' : '0px';
+    btn.addEventListener('click', function(){
+      acc.forEach(function(o){
+        var ob = o.querySelector('.hl-acc-btn');
+        var op = o.querySelector('.hl-acc-panel');
+        if(o !== it){ o.classList.remove('active'); ob && ob.setAttribute('aria-expanded','false'); op && (op.style.maxHeight='0px'); }
+      });
+      var open = btn.getAttribute('aria-expanded') === 'true';
+      if(!open){ it.classList.add('active'); btn.setAttribute('aria-expanded','true'); panel.style.maxHeight = panel.scrollHeight + 'px'; }
+      else { it.classList.remove('active'); btn.setAttribute('aria-expanded','false'); panel.style.maxHeight = '0px'; }
+    });
+  });
+
+  // Slider logic
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.hl-test-slide'));
+  var prevBtn = document.querySelector('.hl-prev');
+  var nextBtn = document.querySelector('.hl-next');
+  var dotsWrap = document.getElementById('testDots');
+  var slidesPerView = getSlidesPerView();
+  var currentIndex = 0;
+  var autoplay = null;
+
+  function getSlidesPerView(){
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    if(w >= 900) return 3;
+    if(w >= 600) return 2;
+    return 1;
+  }
+
+  function renderDots(){
+    dotsWrap.innerHTML = '';
+    var pages = Math.ceil(slides.length / slidesPerView);
+    for(var i=0;i<pages;i++){
+      var b = document.createElement('button');
+      if(i===0) b.classList.add('active');
+      (function(pi){ b.addEventListener('click', function(){ goToPage(pi); resetAutoplay(); }); })(i);
+      dotsWrap.appendChild(b);
+    }
+  }
+
+  function goToPage(pageIndex){
+    var pages = Math.ceil(slides.length / slidesPerView);
+    var p = Math.min(Math.max(0,pageIndex), pages-1);
+    currentIndex = p * slidesPerView;
+    updateSlider();
+  }
+
+  function updateSlider(){
+    var translatePercent = (currentIndex / slidesPerView) * 100;
+    slider.style.transform = 'translateX(-' + translatePercent + '%)';
+    var dots = Array.prototype.slice.call(dotsWrap.children);
+    var activePage = Math.floor(currentIndex / slidesPerView);
+    dots.forEach(function(d,i){ d.classList.toggle('active', i===activePage); });
+    notifyParentHeight(); // content position may affect parent's scroll height
+  }
+
+  function nextPage(){ var pages = Math.ceil(slides.length / slidesPerView); var n = (Math.floor(currentIndex / slidesPerView) + 1) % pages; goToPage(n); }
+  function prevPage(){ var pages = Math.ceil(slides.length / slidesPerView); var p = (Math.floor(currentIndex / slidesPerView) - 1 + pages) % pages; goToPage(p); }
+
+  nextBtn && nextBtn.addEventListener('click', function(){ nextPage(); resetAutoplay(); });
+  prevBtn && prevBtn.addEventListener('click', function(){ prevPage(); resetAutoplay(); });
+
+  window.addEventListener('keydown', function(e){ if(e.key === 'ArrowLeft') prevPage(); if(e.key === 'ArrowRight') nextPage(); });
+
+  function startAutoplay(){ stopAutoplay(); autoplay = setInterval(function(){ nextPage(); }, 6000); }
+  function stopAutoplay(){ if(autoplay) clearInterval(autoplay); autoplay = null; }
+  function resetAutoplay(){ stopAutoplay(); startAutoplay(); }
+
+  var wrap = document.getElementById('sliderWrap');
+  wrap && wrap.addEventListener('mouseenter', stopAutoplay);
+  wrap && wrap.addEventListener('mouseleave', startAutoplay);
+
+  var resizeTimer = null;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){
+      var spv = getSlidesPerView();
+      if(spv !== slidesPerView){
+        slidesPerView = spv;
+        renderDots();
+        goToPage(Math.floor(currentIndex / slidesPerView));
+      }
+    }, 120);
+  });
+
+  slidesPerView = getSlidesPerView();
+  renderDots();
+  goToPage(0);
+  startAutoplay();
+
+  // touch swipe support
+  (function addTouch(){
+    var startX = 0, endX = 0;
+    var vp = document.querySelector('.hl-test-viewport');
+    vp && vp.addEventListener('touchstart', function(e){ startX = e.changedTouches[0].clientX; }, {passive:true});
+    vp && vp.addEventListener('touchend', function(e){ endX = e.changedTouches[0].clientX; var diff = startX - endX; if(Math.abs(diff) > 40){ if(diff > 0) nextPage(); else prevPage(); resetAutoplay(); } }, {passive:true});
+  })();
+
+  // form handling (demo)
+  var form = document.getElementById('testForm');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var fd = new FormData(form);
+      var msg = String(fd.get('message')||'').trim();
+      if(!msg){
+        alert('Thanks — no message provided. If you want your message published later, please type it in.');
+        form.reset();
+        return;
+      }
+      alert('Thanks! We received your launch message. We will contact you on WhatsApp (+254 717 028 877) to verify before publishing.');
+      form.reset();
+    });
+  }
+
+  // notify parent about height (sends message with channel and height)
+  function notifyParentHeight(){
+    try {
+      var h = Math.max(document.documentElement.scrollHeight, 480);
+      parent.postMessage({ channel: '${CHANNEL}', height: h }, '*');
+    } catch(e){}
+  }
+
+  // initial notify (also poll short while to catch fonts/images)
+  notifyParentHeight();
+  var tries = 0;
+  var poll = setInterval(function(){ notifyParentHeight(); tries++; if(tries>12) clearInterval(poll); }, 300);
+
+  // also update height when DOM changes (e.g., accordion open)
+  var observer = new MutationObserver(function(){ notifyParentHeight(); });
+  observer.observe(document.body, { childList:true, subtree:true, attributes:true });
+
+})();
+<\/script>
+</body>
+</html>`; // end iframeHtml
+
+  // Create a blob from the HTML string and set it as iframe src (avoids parser issues)
+  try {
+    const blob = new Blob([iframeHtml], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    iframe.src = url;
+  } catch (err) {
+    // fallback to srcdoc if blob fails
+    try { iframe.srcdoc = iframeHtml; } catch(e){ console.error('Failed to create iframe content', e); iframe.remove(); return; }
+  }
+
+  // Listen for resize messages from the iframe and apply height
+  function onMessage(e){
+    try {
+      const data = e.data || {};
+      if (!data || data.channel !== CHANNEL) return;
+      const h = Number(data.height) || 480;
+      iframe.style.height = Math.max(h, 480) + 'px';
+    } catch(err){}
+  }
+  window.addEventListener('message', onMessage, false);
+
+  // Safety cleanup when this widget is removed later
+  // (optional) observe DOM to cleanup listener if root removed
+  var mo = new MutationObserver(function(){
+    if (!document.body.contains(root)) {
+      window.removeEventListener('message', onMessage);
+      mo.disconnect();
+    }
+  });
+  mo.observe(document.body, { childList: true, subtree: true });
+
+})();
+</script>
+
+  </main>
+
+  <!-- Floating WhatsApp chat -->
+  <div class="wa-fixed">
+    <a id="waChat" class="wa-btn" href="https://wa.me/254717028877?text=Hi%20HELALINK!%20I%20want%20to%20join" target="_blank" rel="noopener noreferrer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="filter:drop-shadow(0 6px 18px rgba(0,0,0,0.15))"><path d="M20.5 3.5A11 11 0 0 0 3.5 20.5L2 22l1.6-4.5A11 11 0 1 0 20.5 3.5zM12 7.5c-1.9 0-2.7.8-3.5 1.6-.7.7-1.3 1.9-1.3 3.4 0 1.5.9 2.9 1.9 3.9.9.9 2.6 2.1 5 2.1 1.3 0 2.3-.2 3.2-.6.8-.4 1.5-1.1 1.9-1.9.4-.8.6-1.8.6-3 0-2.4-1.2-4.1-2.2-5.1-.9-.9-2.2-1.8-4.6-1.8z" fill="#fff"/></svg>
+      <span>Chat on WhatsApp</span>
+    </a>
+  </div>
+
+  <!-- Floating notify button -->
+  <div class="notify-fixed" aria-hidden="false">
+    <div id="notifyBtnStandalone" class="notify-btn" role="button" aria-pressed="false" aria-label="Enable notifications">
+      <svg class="notify-icon" viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zM18 16V11c0-3.07-1.63-5.64-4.5-6.32V4a1.5 1.5 0 1 0-3 0v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="white"/></svg>
+      <span>Enable Notifications</span>
+      <div style="position:relative; margin-left:6px"><div class="pulse-ring" aria-hidden="true"></div></div>
+    </div>
+  </div>
+
+  <!-- Notification modal (auto popup & on-demand) -->
+  <div id="notifyModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="notifyTitle">
+    <div class="modal" role="document">
+      <h3 id="notifyTitle">Enable notifications for HELALINK</h3>
+      <p>Get important launch reminders (24h before, 1h before, and at launch), plus personalized updates about the ways you want to earn. We’ll never spam — you can opt out anytime.</p>
+
+      <div style="display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap">
+        <button id="notifyEnable" class="btn btn-cta">Enable Notifications</button>
+        <button id="notifyLater" class="btn btn-secondary">Maybe later</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pad details modal -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-hidden="true">
+    <div class="modal">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <h3 id="modalTitle">Title</h3>
+          <p id="modalDesc" class="muted">Description</p>
+        </div>
+        <div><button id="modalClose" class="btn">✕</button></div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">
+        <a id="modalWA" class="btn" href="#" target="_blank">Open WhatsApp</a>
+        <button id="modalClose2" class="btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Confetti wrapper -->
+  <div id="confettiWrap" style="pointer-events:none;position:fixed;left:0;top:0;width:100%;height:100%;z-index:2800"></div>
+
+  <!-- Scripts: countdown, notify flows, joiners, pads, modals -->
+  <script>
+    // ------------------------------
+    // Utilities
+    // ------------------------------
+    function showToast(msg, ms = 3200){
+      const t = document.getElementById('toast'); if(!t) return;
+      t.textContent = msg; t.style.display = 'block'; clearTimeout(t._hid); t._hid = setTimeout(()=> t.style.display = 'none', ms);
+    }
+
+    function fireConfetti(x=innerWidth/2,y=innerHeight/2,count=24){
+      const wrap = document.getElementById('confettiWrap');
+      const colors=['#ff7ab6','#ffd86f','#7ef080','#66e0ff','#b899ff'];
+      for(let i=0;i<count;i++){
+        const el = document.createElement('div');
+        el.style.position='absolute';
+        el.style.width=(6+Math.random()*8)+'px';
+        el.style.height=(10+Math.random()*12)+'px';
+        el.style.background = colors[Math.floor(Math.random()*colors.length)];
+        el.style.left = (x + (Math.random()*240-120)) + 'px';
+        el.style.top = (y + (Math.random()*120-60)) + 'px';
+        el.style.borderRadius = '2px';
+        el.style.transform = 'rotate('+Math.random()*360+'deg)';
+        el.style.opacity = '1';
+        el.style.transition = 'transform 1.6s linear, top 1.6s linear, opacity 1.6s ease';
+        wrap.appendChild(el);
+        setTimeout(()=>{ el.style.top = (y+800)+'px'; el.style.transform = 'rotate('+ (Math.random()*720)+'deg)'; el.style.opacity='0'; }, 20);
+        setTimeout(()=> el.remove(), 1800);
+      }
+      const c = document.getElementById('congrats');
+      if(c){ c.style.display='block'; setTimeout(()=> c.style.display='none', 1600); }
+    }
+
+    // ------------------------------
+    // Typewriter tagline
+    // ------------------------------
+    (function(){
+      const el = document.getElementById('type');
+      const words = ['Launch • Network • Earn','New ways to profit','Agencies dropping soon','Launch: 13 Sep 2025 • 2PM EAT'];
+      let wi=0, ci=0, fwd=true;
+      function step(){
+        const w = words[wi];
+        el.textContent = w.slice(0,ci);
+        if(fwd){ ci++; if(ci> w.length){ fwd=false; setTimeout(step,1200); return } }
+        else{ ci--; if(ci<0){ fwd=true; wi=(wi+1)%words.length } }
+        setTimeout(step, fwd ? 70 : 36);
+      }
+      step();
+    })();
+
+    // ------------------------------
+    // Countdown (big + compact + ring)
+    // ------------------------------
+    (function(){
+      const big = document.getElementById('bigCountdown');
+      const daysEl = document.getElementById('daysNum');
+      const hEl = document.getElementById('hUnit');
+      const mEl = document.getElementById('mUnit');
+      const sEl = document.getElementById('sUnit');
+
+      // Launch: 13 Sep 2025 at 14:00 EAT -> 11:00:00Z
+      const launch = new Date('2025-09-13T11:00:00Z');
+
+      function pad(n){ return String(n).padStart(2,'0') }
+      function animSet(el, txt){ if(!el) return; el.classList.remove('flip'); void el.offsetWidth; el.textContent = txt; el.classList.add('flip'); }
+
+      function update(){
+        const now = new Date();
+        let diff = Math.max(0, launch - now);
+        const d = Math.floor(diff / 86400000); diff -= d*86400000;
+        const h = Math.floor(diff / 3600000); diff -= h*3600000;
+        const m = Math.floor(diff / 60000); diff -= m*60000;
+        const s = Math.floor(diff / 1000);
+
+        animSet(daysEl, d);
+        animSet(hEl, pad(h));
+        animSet(mEl, pad(m));
+        animSet(sEl, pad(s));
+
+        if(launch - now <= 0){
+          big.textContent = 'WE ARE LIVE!';
+          fireConfetti(innerWidth/2, innerHeight/2, 80);
+        } else {
+          big.textContent = d + 'd ' + pad(h) + ':' + pad(m) + ':' + pad(s);
+        }
+      }
+
+      update(); setInterval(update, 1000);
+    })();
+
+    // ------------------------------
+    // Notification modal & subscribe flow
+    // ------------------------------
+    (function(){
+      const OPEN_KEY = 'hl_notify_modal_shown_at';
+      const SNOOZE_DAYS = 7;
+      const modalBack = document.getElementById('notifyModal');
+      const btnEnable = document.getElementById('notifyEnable');
+      const btnLater = document.getElementById('notifyLater');
+      const floating = document.getElementById('notifyBtnStandalone');
+      const inline = document.getElementById('notifyBtnInline');
+
+      function isSnoozed(){
+        try{ const v = localStorage.getItem(OPEN_KEY); if(!v) return false; const ts = parseInt(v,10); if(isNaN(ts)) return false; return Date.now() - ts < SNOOZE_DAYS * 24*3600*1000; }catch(e){ return false; }
+      }
+      function markSnoozed(){ try{ localStorage.setItem(OPEN_KEY, String(Date.now())); }catch(e){} }
+
+      let lastFocused = null;
+      function openModal(){
+        if(!modalBack) return;
+        lastFocused = document.activeElement;
+        modalBack.style.display = 'flex';
+        modalBack.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(()=> btnEnable.focus(), 50);
+        document.addEventListener('focus', focusTrap, true);
+        document.addEventListener('keydown', escClose);
+      }
+      function closeModal(snooze=false){
+        if(!modalBack) return;
+        modalBack.style.display = 'none';
+        modalBack.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+        document.removeEventListener('focus', focusTrap, true);
+        document.removeEventListener('keydown', escClose);
+        if(snooze) markSnoozed();
+        try{ if(lastFocused) lastFocused.focus(); else floating.focus(); }catch(e){}
+      }
+      function focusTrap(e){
+        if(!modalBack || modalBack.style.display !== 'flex') return;
+        if(modalBack.contains(e.target)) return;
+        e.stopPropagation();
+        btnEnable.focus();
+      }
+      function escClose(e){ if(e.key === 'Escape'){ closeModal(true); } }
+
+      // open modal from floating/inline buttons
+      if(floating) floating.addEventListener('click', (ev)=>{ ev.preventDefault(); openModal(); });
+      if(inline) inline.addEventListener('click', (ev)=>{ ev.preventDefault(); openModal(); });
+
+      btnLater.addEventListener('click', ()=>{ closeModal(true); showToast('No problem — we will remind you later.'); });
+
+      btnEnable.addEventListener('click', async ()=>{
+        try{
+          const ready = await new Promise((resolve)=>{
+            if(window.PushEngage && typeof window.PushEngage.push === 'function') return resolve(true);
+            let waited=0; const max=8000;
+            const iv = setInterval(()=>{ if(window.PushEngage && typeof window.PushEngage.push === 'function'){ clearInterval(iv); resolve(true); } waited+=200; if(waited>=max){ clearInterval(iv); resolve(false);} },200);
+          });
+
+          if(ready){
+            try{
+              PushEngage.push(['subscribe']);
+              showToast('If you allowed notifications, you are now subscribed ✅');
+              fireConfetti(window.innerWidth/2, window.innerHeight/2, 20);
+              closeModal(false);
+              markSnoozed();
+              // set pressed states
+              floating.setAttribute('aria-pressed','true');
+              if(inline) inline.setAttribute('aria-pressed','true');
+            }catch(err){
+              console.warn('PushEngage subscribe failed', err);
+              if(window.Notification && Notification.requestPermission){
+                const p = await Notification.requestPermission();
+                if(p === 'granted'){ showToast('Notifications enabled via browser permission ✅'); }
+                else showToast('Permission denied or blocked.');
+              } else {
+                showToast('Unable to enable notifications in this browser.');
+              }
+              closeModal(false); markSnoozed();
+            }
+          } else {
+            if(window.Notification && Notification.requestPermission){
+              const p = await Notification.requestPermission();
+              if(p === 'granted'){ showToast('Notifications enabled via browser permission ✅'); fireConfetti(window.innerWidth/2, window.innerHeight/2, 20); }
+              else showToast('Permission denied or blocked.');
+            } else {
+              showToast('Notifications SDK not ready and browser permission unavailable.');
+            }
+            closeModal(false); markSnoozed();
+          }
+        }catch(e){
+          console.error(e); showToast('Something went wrong — check console.'); closeModal(false); markSnoozed();
+        }
+      });
+
+      // Auto-show modal on first load if not snoozed
+      window.addEventListener('load', ()=>{
+        setTimeout(()=>{ if(!isSnoozed()){ openModal(); } }, 1600);
+      });
+
+      // keyboard accessibility for floating button
+      if(floating) floating.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); floating.click(); } });
+      if(inline) inline.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); inline.click(); } });
+
+      // subtle initial attention animation
+      setTimeout(()=>{ if(floating) { floating.classList.add('pulse-attn'); setTimeout(()=>floating.classList.remove('pulse-attn'), 3000); } }, 1400);
+    })();
+
+    // ------------------------------
+    // Joiners simulation
+    // ------------------------------
+    (function(){
+      const feed = document.getElementById('professionalFeed');
+      const onlineList = document.getElementById('onlineList');
+      const onlineCount = document.getElementById('onlineCount');
+      if(!feed || !onlineList || !onlineCount) return;
+      const names = ['Amina','Jayden','Fatma','Olu','Grace','Rashid','Ivy','Zara','Kofi','Liam','Tariq','Mira','Noah','Leah','Kwame','Nadia','Yusuf','Aaliyah'];
+      const countries = [{c:'Kenya',f:'🇰🇪'},{c:'Tanzania',f:'🇹🇿'},{c:'Uganda',f:'🇺🇬'},{c:'Nigeria',f:'🇳🇬'},{c:'Ghana',f:'🇬🇭'}];
+      function avatar(seed){ return `https://api.dicebear.com/8.x/thumbs/svg?seed=${encodeURIComponent(seed)}&backgroundType=gradientLinear&radius=50`; }
+      function timeAgo(date){ const s=Math.floor((Date.now()-date)/1000); if(s<5) return 'just now'; if(s<60) return `${s}s ago`; const m=Math.floor(s/60); if(m<60) return `${m}m ago`; const h=Math.floor(m/60); return `${h}h ago`; }
+      function create(n, cc, t){
+        const wrap = document.createElement('div');
+        wrap.className = 'joiner-card';
+        wrap.innerHTML = `<img src="${avatar(n+cc.c)}" class="w-12 h-12 rounded-full" alt="${n}"/><div style="flex:1"><div style="display:flex;justify-content:space-between"><div><div style="font-weight:800">${n}</div><div class="muted">${cc.f} ${cc.c}</div></div><div style="text-align:right"><div class="muted">${timeAgo(t)}</div><div style="width:10px;height:10px;border-radius:999px;background:#22c55e;margin-top:8px"></div></div></div><div style="margin-top:8px;font-size:12px;color:rgba(255,255,255,0.6)">Joined • ${new Date(t).toLocaleString()}</div></div>`;
+        return wrap;
+      }
+      let count=0;
+      function pushOne(){
+        const n = names[Math.floor(Math.random()*names.length)];
+        const cc = countries[Math.floor(Math.random()*countries.length)];
+        const t = Date.now();
+        feed.prepend(create(n,cc,t));
+        if(feed.children.length>10) feed.lastElementChild.remove();
+        const chip = document.createElement('div');
+        chip.className = 'online-chip';
+        chip.innerHTML = `<img src="${avatar(n+cc.c)}" style="width:34px;height:34px;border-radius:999px" alt="${n}"/><div style="font-weight:700;font-size:12px">${n}</div>`;
+        onlineList.prepend(chip);
+        if(onlineList.children.length>12) onlineList.lastElementChild.remove();
+        count++; onlineCount.textContent = String(Math.min(999,count));
+      }
+      for(let i=0;i<4;i++) pushOne();
+      setInterval(pushOne, 3200 + Math.random()*3200);
+    })();
+
+    // ------------------------------
+    // Pads selection (localStorage) & modal details
+    // ------------------------------
+    (function(){
+      const cards = Array.from(document.querySelectorAll('.pad[data-key]'));
+      if(!cards.length) return;
+
+      cards.forEach(card=>{
+        const key = card.dataset.key;
+        try{ if(localStorage.getItem('hl_sel_'+key) === '1'){ card.classList.add('selected'); } }catch(e){}
+
+        function toggle(){
+          const active = card.classList.toggle('selected');
+          try{ localStorage.setItem('hl_sel_'+key, active ? '1' : '0'); }catch(e){}
+          showToast(active ? 'Interest saved locally.' : 'Interest removed.');
+        }
+
+        card.addEventListener('click', (e)=>{
+          if((e.target||{}).tagName === 'A' || (e.target||{}).classList.contains('modal-open')) return;
+          toggle();
+        });
+        card.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); } });
+      });
+
+      // details modal
+      (function(){
+        const modalBackdrop = document.getElementById('modalBackdrop');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalWA = document.getElementById('modalWA');
+        const modalClose = document.getElementById('modalClose');
+        const modalClose2 = document.getElementById('modalClose2');
+
+        function openCard(card){
+          const title = card.dataset.title || 'Info';
+          const desc = card.dataset.desc || '';
+          modalTitle.textContent = title;
+          modalDesc.textContent = desc;
+          const wa = card.querySelector('a');
+          if(wa && wa.href){
+            modalWA.href = wa.href;
+            modalWA.textContent = 'Open WhatsApp';
+            modalWA.target = '_blank';
+          } else {
+            modalWA.href = '#';
+            modalWA.textContent = 'Close';
+          }
+          modalBackdrop.style.display = 'flex';
+          modalBackdrop.setAttribute('aria-hidden','false');
+          document.body.style.overflow = 'hidden';
+          setTimeout(()=> modalClose.focus(), 60);
+        }
+        function close(){
+          modalBackdrop.style.display = 'none';
+          modalBackdrop.setAttribute('aria-hidden','true');
+          document.body.style.overflow = '';
+        }
+        document.querySelectorAll('.modal-open').forEach(btn=>{
+          btn.addEventListener('click', (e)=>{
+            e.stopPropagation();
+            const card = btn.closest('.pad');
+            if(card) openCard(card);
+          });
+        });
+        modalBackdrop.addEventListener('click', (e)=>{ if(e.target === modalBackdrop) close(); });
+        modalClose.addEventListener('click', close);
+        modalClose2.addEventListener('click', close);
+        document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ const mb = document.getElementById('modalBackdrop'); if(mb && mb.style.display==='flex'){ mb.style.display='none'; document.body.style.overflow=''; } } });
+      })();
+    })();
+
+    // small @load animations
+    (function(){ const wa = document.getElementById('waChat'); if(wa) wa.style.opacity=0, setTimeout(()=> wa.style.opacity=1, 300); })();
+  </script>
+</body>
+</html>
+
